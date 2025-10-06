@@ -219,6 +219,7 @@ export default function App() {
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{integration.description}</p>
                   
                   <Button 
+                    onClick={openCalendly}
                     variant="outline" 
                     className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-[#00D1C7]"
                   >

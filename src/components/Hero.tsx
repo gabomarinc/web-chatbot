@@ -122,6 +122,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 onClick={onCalendlyOpen}
                 size="lg"
                 className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-6"
+                aria-label="Agendar una cita de 30 minutos para conocer Kônsul Digital"
               >
                 Agenda 30 minutos
               </Button>
@@ -130,6 +131,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                     size="lg"
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent"
+                    aria-label="Probar la demo de Kônsul Digital para ver cómo funciona"
                   >
                     Probar Demo
                   </Button>

@@ -140,6 +140,7 @@ export default function App() {
                 onClick={openCalendly}
                 size="lg"
                 className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-4"
+                aria-label="Agendar una cita de 30 minutos con Kônsul Digital"
               >
                 Agenda 30 minutos
               </Button>
@@ -320,6 +321,7 @@ export default function App() {
                 size="lg"
                 variant="outline"
                 className="border-[#00D1C7] text-[#00D1C7] hover:bg-[#00D1C7] hover:text-white text-lg px-8 py-4"
+                aria-label="Probar la demo de Kônsul Digital para ver las funcionalidades"
               >
                 Probar Demo
               </Button>
@@ -480,6 +482,7 @@ export default function App() {
                 onClick={openCalendly}
                 size="lg"
                 className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-4"
+                aria-label="Agendar una cita de 30 minutos con Kônsul Digital"
               >
                 Agenda 30 minutos
               </Button>

@@ -49,7 +49,11 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
                 {item.label}
               </button>
             ))}
-            <Button onClick={onCalendlyOpen} className="bg-[#0A2540] hover:bg-[#0A2540]/90 text-white border border-white/20">
+            <Button 
+              onClick={onCalendlyOpen} 
+              className="bg-[#0A2540] hover:bg-[#0A2540]/90 text-white border border-white/20"
+              aria-label="Agendar una cita de 30 minutos con Kônsul Digital"
+            >
               Agenda 30 minutos
             </Button>
           </div>
@@ -60,6 +64,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
               onClick={onCalendlyOpen}
               size="sm"
               className="bg-[#0A2540] hover:bg-[#0A2540]/90 text-white border border-white/20"
+              aria-label="Agendar una cita de 30 minutos"
             >
               Agendar
             </Button>

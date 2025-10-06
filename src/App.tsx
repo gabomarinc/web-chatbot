@@ -151,42 +151,48 @@ export default function App() {
                 title: "Telegram",
                 description: "Crea un bot en Telegram y conéctalo a tu agente Kônsul.",
                 color: "bg-blue-500",
-                gradient: "from-blue-400 to-blue-600"
+                gradient: "from-blue-400 to-blue-600",
+                tagColor: "bg-blue-100 text-blue-700"
               },
               {
                 icon: MessageSquare,
                 title: "WhatsApp Meta",
                 description: "Vincula tu agente al WhatsApp Oficial de Meta vía Cloud API.",
                 color: "bg-green-500",
-                gradient: "from-green-400 to-green-600"
+                gradient: "from-green-400 to-green-600",
+                tagColor: "bg-green-100 text-green-700"
               },
               {
                 icon: Camera,
                 title: "Instagram",
                 description: "Automatiza los mensajes directos de tu Instagram.",
                 color: "bg-pink-500",
-                gradient: "from-pink-400 via-purple-500 to-orange-400"
+                gradient: "from-pink-400 via-purple-500 to-orange-400",
+                tagColor: "bg-pink-100 text-pink-700"
               },
               {
                 icon: MessageSquare,
                 title: "Messenger",
                 description: "Atiende a los clientes que envían mensajes en tu Página de Facebook.",
                 color: "bg-blue-600",
-                gradient: "from-blue-500 to-blue-700"
+                gradient: "from-blue-500 to-blue-700",
+                tagColor: "bg-indigo-100 text-indigo-700"
               },
               {
                 icon: Globe,
                 title: "Web Chat",
                 description: "Coloca tu agente para atender a los visitantes de tu sitio web.",
                 color: "bg-purple-500",
-                gradient: "from-purple-400 to-purple-600"
+                gradient: "from-purple-400 to-purple-600",
+                tagColor: "bg-purple-100 text-purple-700"
               },
               {
                 icon: Smartphone,
                 title: "SMS",
                 description: "Permite que el agente interactúe con los clientes por mensaje de texto.",
                 color: "bg-green-600",
-                gradient: "from-green-500 to-green-700"
+                gradient: "from-green-500 to-green-700",
+                tagColor: "bg-emerald-100 text-emerald-700"
               }
             ].map((integration, index) => (
               <motion.div
@@ -198,10 +204,10 @@ export default function App() {
                 className="relative"
               >
                 <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-[#00D1C7]/30 bg-white">
-                  {/* Tag Grátis */}
+                  {/* Tag Nuevo */}
                   <div className="absolute top-4 right-4">
-                    <span className="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded-full">
-                      Gratis
+                    <span className={`${integration.tagColor} text-xs font-medium px-2 py-1 rounded-full`}>
+                      Nuevo
                     </span>
                   </div>
                   
@@ -216,7 +222,7 @@ export default function App() {
                     variant="outline" 
                     className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-[#00D1C7]"
                   >
-                    Conectar Gratis
+                    Configurar
                   </Button>
                 </Card>
               </motion.div>

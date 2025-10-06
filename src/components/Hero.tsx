@@ -125,14 +125,14 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
               >
                 Agenda 30 minutos
               </Button>
-              <Button
-                onClick={onDemoClick}
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent"
-              >
-                Ver Demo
-              </Button>
+                  <Button
+                    onClick={onDemoClick}
+                    size="lg"
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent"
+                  >
+                    Probar Demo
+                  </Button>
             </div>
 
             {/* Tagline */}

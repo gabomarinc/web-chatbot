@@ -319,7 +319,7 @@ export default function App() {
                 variant="outline"
                 className="border-[#00D1C7] text-[#00D1C7] hover:bg-[#00D1C7] hover:text-white text-lg px-8 py-4"
               >
-                Ver Demo
+                Probar Demo
               </Button>
             </motion.div>
           </motion.div>
@@ -688,7 +688,7 @@ export default function App() {
                 variant="outline"
                 className="border-[#0A2540]/30 text-[#0A2540] hover:bg-[#0A2540]/10 text-lg px-8 py-6 bg-white"
               >
-                Ver Demo
+                Probar Demo
               </Button>
             </div>
           </motion.div>

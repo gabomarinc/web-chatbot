@@ -75,7 +75,6 @@ function AnimatedMessage({
 
 export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(true);
 
   const messages = [
     { text: "¡Hola! Soy Kônsul. ¿En qué puedo ayudarte hoy?", isUser: false },

@@ -1,4 +1,4 @@
-import konsulLogo from '../assets/konsul-logo.svg';
+import konsulLogo from '../assets/logo-konsul.png';
 
 interface KonsulLogoProps {
   className?: string;
@@ -18,6 +18,7 @@ export function KonsulLogo({ className = '', size = 'md' }: KonsulLogoProps) {
         src={konsulLogo} 
         alt="KÔNSUL DIGITAL" 
         className="h-full w-auto"
+        style={{ imageRendering: 'auto' }}
       />
     </div>
   );

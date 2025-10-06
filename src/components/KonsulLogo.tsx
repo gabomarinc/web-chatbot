@@ -22,6 +22,7 @@ export function KonsulLogo({ className = '', size = 'md' }: KonsulLogoProps) {
         loading="eager"
         width="200"
         height="40"
+        fetchPriority="high"
       />
     </div>
   );

@@ -36,15 +36,20 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://assets.calendly.com" />
     <link rel="preconnect" href="https://app.gptmaker.ai" />
+    <link rel="preconnect" href="https://gpt-files.com" />
+    <link rel="dns-prefetch" href="https://assets.calendly.com" />
+    <link rel="dns-prefetch" href="https://app.gptmaker.ai" />
+    <link rel="dns-prefetch" href="https://gpt-files.com" />
     
     <!-- Calendly link widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
     <!-- Calendly link widget end -->
     
     <!-- GPT Maker Chatbot -->
     <script 
-      async 
+      defer
       src="https://app.gptmaker.ai/widget/3E76F75BD0A222B0634A96DA1F24A670/float.js">
     </script>
     

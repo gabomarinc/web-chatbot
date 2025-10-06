@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { KonsulLogo } from "./KonsulLogo";
 
 interface NavbarProps {
   onCalendlyOpen: () => void;
@@ -34,9 +35,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-xl md:text-2xl font-bold text-white">
-              Kônsul Digital
-            </span>
+            <KonsulLogo size="md" />
           </div>
 
           {/* Desktop Menu */}

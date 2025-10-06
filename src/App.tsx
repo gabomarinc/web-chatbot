@@ -44,7 +44,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar onCalendlyOpen={openCalendly} />
+      <header>
+        <Navbar onCalendlyOpen={openCalendly} />
+      </header>
       
       <Hero 
         onCalendlyOpen={openCalendly} 
@@ -695,7 +697,9 @@ export default function App() {
         </div>
       </section>
 
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
 
       {/* Sticky Mobile CTA */}
       <motion.div

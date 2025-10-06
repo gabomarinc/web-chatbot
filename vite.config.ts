@@ -10,4 +10,30 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./"),
     },
   },
+  build: {
+    // Optimize chunks
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          framer: ['framer-motion'],
+          ui: ['lucide-react'],
+        },
+      },
+    },
+    // Minify for production
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+  },
+  // Performance optimizations
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000',
+    },
+  },
 })

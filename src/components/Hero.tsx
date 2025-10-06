@@ -1,0 +1,304 @@
+import { Button } from "./ui/button";
+import { MessageSquare, TrendingUp, Calendar } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+
+interface HeroProps {
+  onCalendlyOpen: () => void;
+  onDemoClick: () => void;
+}
+
+// Componente para mensajes animados
+function AnimatedMessage({ 
+  text, 
+  isUser = false, 
+  delay = 0, 
+  onComplete 
+}: { 
+  text: string; 
+  isUser?: boolean; 
+  delay?: number; 
+  onComplete?: () => void;
+}) {
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      let currentIndex = 0;
+      const interval = setInterval(() => {
+        if (currentIndex <= text.length) {
+          setDisplayedText(text.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+          setIsTyping(false);
+          onComplete?.();
+        }
+      }, 50); // Velocidad de escritura
+
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [text, delay, onComplete]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.3, delay: delay / 1000 }}
+      className={`flex gap-3 ${isUser ? 'justify-end' : ''}`}
+    >
+      {!isUser && (
+        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] flex-shrink-0"></div>
+      )}
+      <div className={`rounded-lg px-4 py-3 max-w-[80%] ${
+        isUser 
+          ? 'bg-[#0A2540] rounded-tr-none' 
+          : 'bg-gray-100 rounded-tl-none'
+      }`}>
+        <p className={`text-sm ${isUser ? 'text-white' : 'text-gray-700'}`}>
+          {displayedText}
+          {isTyping && <motion.span
+            animate={{ opacity: [1, 0] }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+            className="ml-1"
+          >
+            |
+          </motion.span>}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
+
+  const messages = [
+    { text: "¡Hola! Soy Kônsul. ¿En qué puedo ayudarte hoy?", isUser: false },
+    { text: "Necesito información sobre automatización", isUser: true },
+    { text: "Perfecto. Te puedo agendar una llamada con nuestro equipo. ¿Qué día te viene mejor?", isUser: false }
+  ];
+
+  const handleMessageComplete = () => {
+    setTimeout(() => {
+      setCurrentMessageIndex(prev => {
+        if (prev < messages.length - 1) {
+          return prev + 1;
+        } else {
+          // Reiniciar la animación después de 3 segundos
+          setTimeout(() => {
+            setCurrentMessageIndex(0);
+          }, 3000);
+          return prev;
+        }
+      });
+    }, 1000);
+  };
+
+  return (
+    <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-[#0A2540] z-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center lg:text-left"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Tu nuevo asistente inteligente con IA.
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
+              Kônsul conversa, agenda y automatiza para que tu negocio funcione incluso cuando vos no estás.
+            </p>
+
+            {/* Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button
+                onClick={onCalendlyOpen}
+                size="lg"
+                className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-6"
+              >
+                Agenda 30 minutos
+              </Button>
+              <Button
+                onClick={onDemoClick}
+                size="lg"
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent"
+              >
+                Ver Demo
+              </Button>
+            </div>
+
+            {/* Tagline */}
+            <p className="mt-8 text-white/80">
+              Chatbots que atienden, aprenden y convierten.
+            </p>
+          </motion.div>
+
+          {/* Right: Chat Mockup */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative z-0"
+          >
+            <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-md mx-auto">
+              {/* Chat Header */}
+              <div className="flex items-center gap-3 pb-4 border-b">
+                <div className="relative">
+                  <motion.div 
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      boxShadow: [
+                        "0 0 0 0 rgba(0, 209, 199, 0.7)",
+                        "0 0 0 10px rgba(0, 209, 199, 0)",
+                        "0 0 0 0 rgba(0, 209, 199, 0)"
+                      ]
+                    }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity,
+                      ease: "easeOut"
+                    }}
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] flex items-center justify-center"
+                  >
+                    <MessageSquare size={20} className="text-white" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ opacity: [1, 0.3, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#0A2540]">Kônsul AI</h3>
+                  <motion.p 
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="text-xs text-gray-500 flex items-center gap-1"
+                  >
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    En línea
+                  </motion.p>
+                </div>
+              </div>
+
+              {/* Chat Messages */}
+              <div className="space-y-4 mt-4 min-h-[200px]">
+                <AnimatePresence mode="popLayout">
+                  {messages.slice(0, currentMessageIndex + 1).map((message, index) => (
+                    <AnimatedMessage
+                      key={`${index}-${currentMessageIndex}`}
+                      text={message.text}
+                      isUser={message.isUser}
+                      delay={index * 2000}
+                      onComplete={index === currentMessageIndex ? handleMessageComplete : undefined}
+                    />
+                  ))}
+                </AnimatePresence>
+              </div>
+
+              {/* Mini Analytics */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.5 }}
+                className="mt-6 pt-4 border-t grid grid-cols-3 gap-3"
+              >
+                {[
+                  { icon: TrendingUp, value: "+40%", label: "Respuestas" },
+                  { icon: Calendar, value: "+25%", label: "Leads" },
+                  { icon: MessageSquare, value: "24/7", label: "Online" }
+                ].map((metric, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: 2 + (index * 0.2),
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    className="text-center cursor-pointer"
+                  >
+                    <div className="flex items-center justify-center gap-1 text-[#00D1C7]">
+                      <metric.icon size={16} />
+                      <motion.span 
+                        className="text-xl font-bold"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 2.5 + (index * 0.2) }}
+                      >
+                        {metric.value}
+                      </motion.span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">{metric.label}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Floating Elements */}
+            <motion.div
+              animate={{ 
+                y: [0, -10, 0],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-3 hidden md:block z-0"
+            >
+              <MessageSquare className="text-[#00D1C7]" size={24} />
+            </motion.div>
+
+            {/* Additional floating elements */}
+            <motion.div
+              animate={{ 
+                y: [0, -15, 0],
+                x: [0, 5, 0],
+                rotate: [0, -10, 10, 0]
+              }}
+              transition={{ 
+                duration: 5, 
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+              className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden md:block z-0"
+            >
+              <TrendingUp className="text-white" size={20} />
+            </motion.div>
+
+            <motion.div
+              animate={{ 
+                scale: [1, 1.1, 1],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+              className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden lg:block z-0"
+            >
+              <Calendar className="text-white" size={16} />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

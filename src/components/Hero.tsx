@@ -99,7 +99,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
   };
 
   return (
-    <section className="relative bg-[#0A2540] z-0">
+    <section className="relative bg-[#0A2540] z-0 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-6rem)]">
           {/* Left: Content */}
@@ -248,7 +248,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
               </motion.div>
             </div>
 
-            {/* Floating Elements - Hidden on mobile */}
+            {/* Floating Elements - Hidden on mobile and contained */}
             <motion.div
               animate={{ 
                 y: [0, -10, 0],
@@ -259,7 +259,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-3 hidden lg:block z-0"
+              className="absolute top-4 left-4 bg-white rounded-xl shadow-lg p-3 hidden lg:block z-0"
             >
               <MessageSquare className="text-[#00D1C7]" size={24} />
             </motion.div>
@@ -277,7 +277,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 1
               }}
-              className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden lg:block z-0"
+              className="absolute bottom-4 right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden lg:block z-0"
             >
               <TrendingUp className="text-white" size={20} />
             </motion.div>
@@ -293,7 +293,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 2
               }}
-              className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden xl:block z-0"
+              className="absolute top-1/2 left-4 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden xl:block z-0"
             >
               <Calendar className="text-white" size={16} />
             </motion.div>

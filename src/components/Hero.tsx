@@ -109,7 +109,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
             <p className="mt-1 sm:mt-1 md:mt-2 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">

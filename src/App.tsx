@@ -3,7 +3,17 @@ import { motion } from "framer-motion";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Footer } from "./components/Footer";
-import { openCalendly } from "./hooks/useCalendly";
+// Función para abrir Calendly
+const openCalendly = () => {
+  if (typeof window !== 'undefined' && window.Calendly) {
+    window.Calendly.initPopupWidget({
+      url: 'https://calendly.com/wearekonsul/30min'
+    });
+  } else {
+    // Fallback: abrir en nueva pestaña
+    window.open('https://calendly.com/wearekonsul/30min', '_blank');
+  }
+};
 import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./components/ui/accordion";

@@ -618,73 +618,136 @@ export default function App() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: "Starter",
-                description: "Ideal para empresas que quieren comenzar con automatización básica.",
-                features: [
-                  "Agente de IA básico",
-                  "Hasta 1,000 conversaciones/mes",
-                  "Integración con sitio web",
-                  "Panel de analítica básico",
-                  "Soporte por email"
-                ]
-              },
-              {
-                name: "Growth",
-                description: "Perfecto para equipos que buscan escalar con agentes de IA inteligentes y analítica avanzada.",
-                features: [
-                  "Agente de IA avanzado",
-                  "Conversaciones ilimitadas",
-                  "Integración omnicanal",
-                  "Google Calendar + CRM + APIs",
-                  "Analítica avanzada",
-                  "Soporte prioritario 24/7"
-                ],
-                popular: true
-              }
-            ].map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className={`p-8 h-full ${plan.popular ? 'border-2 border-[#00D1C7] shadow-xl' : 'border border-gray-100'} relative`}>
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#00D1C7] text-white px-4 py-1 rounded-full text-sm font-bold">
-                      Más popular
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold mb-3 text-[#0A2540]">{plan.name}</h3>
-                  <p className="text-gray-600 mb-8">{plan.description}</p>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+            {/* Plan Starter */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Card className="p-8 h-full border border-gray-100 relative">
+                <h3 className="text-2xl font-bold mb-3 text-[#0A2540]">Starter</h3>
+                <p className="text-gray-600 mb-8">Ideal para empresas que quieren comenzar con automatización básica.</p>
+                
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Capacidad de recibir y enviar notas de voz</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Integración con tu Web, WhatsApp, Instagram, Telegram, Messenger</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Conexión con Google Calendar</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Soporte por Email y Chat</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Panel de Analítica</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">2500 Tokens Mensuales</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Hasta 170 Chats al Mes</span>
+                  </li>
+                </ul>
 
-                  <Button 
-                    onClick={openCalendly}
-                    className={`w-full ${plan.popular ? 'bg-[#00D1C7] hover:bg-[#00D1C7]/90 text-white' : 'bg-[#0A2540] hover:bg-[#0A2540]/90 text-white'}`}
-                  >
-                    Solicitar propuesta
-                    <ArrowRight className="ml-2" size={16} />
-                  </Button>
-                </Card>
-              </motion.div>
-            ))}
+                <div className="mb-6">
+                  <div className="text-3xl font-bold text-[#0A2540] mb-2">$135 / Mes</div>
+                  <div className="text-base text-gray-600">
+                    <span>Costo de Implementación </span>
+                    <span className="line-through">$1,500.00</span>
+                    <span className="text-[#00D1C7] font-semibold ml-2">$995.00</span>
+                  </div>
+                </div>
+
+                <Button 
+                  onClick={openCalendly}
+                  className="w-full bg-[#00D1C7] hover:bg-[#00D1C7]/90 text-white"
+                >
+                  Me Interesa
+                  <ArrowRight className="ml-2" size={16} />
+                </Button>
+              </Card>
+            </motion.div>
+
+            {/* Plan A Medida */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="p-8 h-full border-2 border-[#00D1C7] shadow-xl relative">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#00D1C7] text-white px-4 py-1 rounded-full text-sm font-bold">
+                  Personalizado
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-[#0A2540]">A Medida</h3>
+                <p className="text-gray-600 mb-8">Solución personalizada para empresas que necesitan funcionalidades específicas y escalabilidad avanzada.</p>
+                
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Todas las funcionalidades del Plan Starter</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Integraciones Personalizadas</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Flujos Personalizados</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Múltiples Agentes de IA</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Soporte Prioritario</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Analítica Avanzada</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Reportes Personalizados</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#00D1C7] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-700">Capacidad de mensajes a tu necesidad</span>
+                  </li>
+                </ul>
+
+                <div className="mb-6">
+                  <div className="text-3xl font-bold text-[#0A2540] mb-2">Precio personalizado</div>
+                  <div className="text-sm text-gray-600">Según necesidades específicas</div>
+                </div>
+
+                <Button 
+                  onClick={openCalendly}
+                  className="w-full bg-[#00D1C7] hover:bg-[#00D1C7]/90 text-white"
+                >
+                  Solicitar cotización
+                  <ArrowRight className="ml-2" size={16} />
+                </Button>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-16 md:py-24 bg-white">
+      <section id="faq" className="py-16 md:py-24 bg-[#F9FAFB]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -699,6 +762,14 @@ export default function App() {
 
           <Accordion type="single" collapsible className="space-y-4">
             {[
+              {
+                question: "¿Cuál es el costo de implementación?",
+                answer: "El costo de implementación es de $1,500.00, sin embargo actualmente tenemos una oferta especial que reduce la implementación a $995.00 por tiempo limitado. Este costo se paga en 3 cuotas: 40% inicial para comenzar la implementación, 30% al entregar el primer prototipo del agente de IA, y el 30% restante al finalizar el proyecto."
+              },
+              {
+                question: "¿Además del costo de implementación, hay algún costo mensual?",
+                answer: "Sí, el plan Starter tiene un costo mensual de $135.00 para mantener el servicio activo. Este costo incluye todas las funcionalidades del plan, soporte técnico y actualizaciones del sistema."
+              },
               {
                 question: "¿Cuánto tarda la implementación?",
                 answer: "La implementación básica toma entre 1-2 semanas. Incluye configuración inicial, integración con tus sistemas y entrenamiento del agente de IA con tu información específica."

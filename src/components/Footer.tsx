@@ -1,4 +1,5 @@
-import { Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { KonsulLogo } from "./KonsulLogo";
 
 export function Footer() {
   return (
@@ -7,14 +8,14 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold">Kônsul Digital</h3>
+            <KonsulLogo size="lg" />
             <p className="mt-4 text-white/70 max-w-md">
               Soluciones impulsadas por inteligencia artificial para automatizar tu negocio y mejorar la experiencia de tus clientes.
             </p>
             <div className="mt-6 flex items-center gap-2 text-white/70">
               <Mail size={18} />
-              <a href="mailto:hello@konsul.digital" className="hover:text-[#00D1C7] transition-colors">
-                hello@konsul.digital
+              <a href="mailto:somos@konsul.digital" className="hover:text-[#00D1C7] transition-colors">
+                somos@konsul.digital
               </a>
             </div>
           </div>
@@ -62,30 +63,6 @@ export function Footer() {
               </li>
             </ul>
 
-            <h4 className="font-semibold mb-4">Síguenos</h4>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00D1C7] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00D1C7] transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00D1C7] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-            </div>
           </div>
         </div>
 

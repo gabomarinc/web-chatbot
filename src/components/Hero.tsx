@@ -99,9 +99,9 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-[#0A2540] z-0">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 w-full">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+    <section className="relative bg-[#0A2540] z-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-6rem)]">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,19 +109,19 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
               Kônsul conversa, agenda y automatiza para que tu negocio funcione incluso cuando vos no estás.
             </p>
 
             {/* Buttons */}
-            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto">
+            <div className="mt-4 sm:mt-6 md:mt-8 flex flex-col gap-3 justify-center lg:justify-start w-full">
               <Button
                 onClick={onCalendlyOpen}
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
+                className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-base px-6 py-4"
                 aria-label="Agendar una cita de 30 minutos para conocer Kônsul Digital"
               >
                 Agenda 30 minutos
@@ -130,7 +130,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 onClick={onDemoClick}
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-transparent"
+                className="w-full border-white/30 text-white hover:bg-white/10 text-base px-6 py-4 bg-transparent"
                 aria-label="Probar la demo de Kônsul Digital para ver cómo funciona"
               >
                 Probar Demo
@@ -138,7 +138,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             </div>
 
             {/* Tagline */}
-            <p className="mt-8 text-white/80">
+            <p className="mt-4 sm:mt-6 md:mt-8 text-sm sm:text-base text-white/80">
               Chatbots que atienden, aprenden y convierten.
             </p>
           </motion.div>
@@ -148,9 +148,9 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative z-0 w-full max-w-sm mx-auto lg:max-w-md"
+            className="relative z-0 w-full max-w-xs mx-auto lg:max-w-md order-first lg:order-last"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-full">
+            <div className="bg-white rounded-xl shadow-xl p-4 w-full">
               {/* Chat Header */}
               <div className="flex items-center gap-3 pb-4 border-b">
                 <div className="relative">

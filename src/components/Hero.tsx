@@ -214,8 +214,8 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 className="mt-6 pt-4 border-t grid grid-cols-3 gap-3"
               >
                 {[
-                  { icon: TrendingUp, value: "+40%", label: "Respuestas" },
-                  { icon: Calendar, value: "+25%", label: "Leads" },
+                  { icon: TrendingUp, value: "+100%", label: "Respuestas" },
+                  { icon: Calendar, value: "+30%", label: "Leads" },
                   { icon: MessageSquare, value: "24/7", label: "Online" }
                 ].map((metric, index) => (
                   <motion.div

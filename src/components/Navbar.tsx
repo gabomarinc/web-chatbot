@@ -46,7 +46,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0A2540] border-b border-[#0A2540]/20">
+    <nav className="sticky top-0 z-[100] bg-[#0A2540] border-b border-[#0A2540]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
@@ -78,10 +78,10 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white p-2 hover:bg-white/10 rounded transition-colors"
+              className="text-white p-3 hover:bg-white/20 active:bg-white/30 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -95,7 +95,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden bg-[#0A2540] border-t border-white/10 overflow-hidden"
+            className="lg:hidden bg-[#0A2540] border-t border-white/10 overflow-hidden relative z-[100]"
           >
             <div className="px-4 py-6 space-y-4">
               {/* Navigation Items */}

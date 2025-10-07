@@ -30,7 +30,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0A2540] border-b border-white/10 shadow-lg">
+    <nav className="sticky top-0 z-50 bg-[#0A2540] border-b border-white/20 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
@@ -59,10 +59,10 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white p-2"
+              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}

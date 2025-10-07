@@ -112,12 +112,12 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
-            <p className="mt-1 sm:mt-1 md:mt-2 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-3 sm:mt-1 md:mt-2 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
               Kônsul conversa, agenda y automatiza para que tu negocio funcione incluso cuando vos no estás.
             </p>
 
             {/* Buttons */}
-            <div className="mt-1 sm:mt-2 md:mt-2 flex flex-col sm:flex-row gap-2 justify-center lg:justify-start w-full">
+            <div className="mt-4 sm:mt-2 md:mt-2 flex flex-col sm:flex-row gap-2 justify-center lg:justify-start w-full">
               <Button
                 onClick={onCalendlyOpen}
                 size="lg"
@@ -138,7 +138,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             </div>
 
             {/* Tagline */}
-            <p className="mt-1 sm:mt-1 md:mt-2 text-sm sm:text-base text-white/80">
+            <p className="mt-3 sm:mt-1 md:mt-2 text-sm sm:text-base text-white/80">
               Chatbots que atienden, aprenden y convierten.
             </p>
           </motion.div>

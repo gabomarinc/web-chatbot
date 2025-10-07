@@ -109,7 +109,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
             <p className="mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
@@ -259,7 +259,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-3 hidden md:block z-0"
+              className="absolute -top-8 -left-10 bg-white rounded-xl shadow-lg p-3 hidden md:block z-0"
             >
               <MessageSquare className="text-[#00D1C7]" size={24} />
             </motion.div>
@@ -277,7 +277,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 1
               }}
-              className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden md:block z-0"
+              className="absolute -bottom-6 -right-8 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden md:block z-0"
             >
               <TrendingUp className="text-white" size={20} />
             </motion.div>
@@ -293,7 +293,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 2
               }}
-              className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden lg:block z-0"
+              className="absolute top-1/2 -left-12 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden lg:block z-0"
             >
               <Calendar className="text-white" size={16} />
             </motion.div>

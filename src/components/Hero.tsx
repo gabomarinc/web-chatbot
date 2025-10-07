@@ -99,7 +99,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0A2540] z-0">
+    <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-[#0A2540] z-0">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 w-full">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Content */}

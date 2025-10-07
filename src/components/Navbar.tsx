@@ -30,7 +30,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0A2540] border-b border-[#0A2540]/20">
+    <nav className="sticky top-0 z-50 bg-[#0A2540] border-b border-white/10 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}

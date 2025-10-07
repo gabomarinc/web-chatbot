@@ -139,7 +139,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
 
             {/* Tagline */}
             <p className="mt-3 sm:mt-1 md:mt-2 text-sm sm:text-base text-white/80">
-              Chatbots que atienden, aprenden y convierten.
+              Agentes de IA que atienden, aprenden y convierten.
             </p>
           </motion.div>
 

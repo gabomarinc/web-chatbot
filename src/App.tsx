@@ -74,7 +74,7 @@ export default function App() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0A2540]">
-              Kônsul: el chatbot que trabaja como tu mejor asistente.
+              Kônsul: el agente de IA que trabaja como tu mejor asistente.
             </h2>
             <p className="mt-6 text-lg text-gray-600">
               Responde, filtra, agenda y hace seguimiento automático de tus clientes. Sin café, sin descanso.
@@ -91,7 +91,7 @@ export default function App() {
               },
               {
                 icon: Calendar,
-                title: "Agenda reuniones con Calendly",
+                title: "Agenda reuniones con Google Calendar",
                 description: "Sin intermediarios: Kônsul coordina citas directamente en tu calendario.",
                 gradient: "from-[#6AE3E1] to-[#00D1C7]"
               },
@@ -136,7 +136,7 @@ export default function App() {
               Prueba Kônsul en acción
             </h2>
             <p className="text-lg text-gray-600">
-              Interactúa con nuestro chatbot inteligente y descubre cómo puede transformar la atención a tus clientes.
+              Interactúa con nuestro agente de IA inteligente y descubre cómo puede transformar la atención a tus clientes.
             </p>
           </motion.div>
 
@@ -163,7 +163,7 @@ export default function App() {
                   style={{ height: '100%', minHeight: '700px' }}
                   allow="microphone;" 
                   frameBorder="0"
-                  title="Kônsul AI Chatbot Demo"
+                  title="Kônsul AI Agente Demo"
                   className="w-full h-full"
                 />
               </div>
@@ -178,14 +178,14 @@ export default function App() {
             className="text-center mt-12"
           >
             <p className="text-gray-600 mb-6">
-              ¿Te gustó la experiencia? Implementa tu propio chatbot personalizado.
+              ¿Te gustó la experiencia? Implementa tu propio agente de IA personalizado.
             </p>
             <Button
               onClick={openCalendly}
               size="lg"
               className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-4"
             >
-              Quiero mi chatbot
+              Quiero mi agente de IA
             </Button>
           </motion.div>
         </div>
@@ -413,7 +413,7 @@ export default function App() {
               },
               {
                 icon: Calendar,
-                title: "Integración con Calendly",
+                title: "Integración con Google Calendar",
                 description: "Sincronización directa con tu calendario."
               },
               {
@@ -467,9 +467,9 @@ export default function App() {
           {/* KPI Counters */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {[
-              { value: "+40%", label: "velocidad de respuesta", icon: TrendingUp },
-              { value: "–30%", label: "tareas manuales", icon: Zap },
-              { value: "+25%", label: "leads calificados", icon: Target }
+              { value: "+100%", label: "velocidad de respuesta", icon: TrendingUp },
+              { value: "–50%", label: "tareas manuales", icon: Zap },
+              { value: "+30%", label: "leads calificados", icon: Target }
             ].map((kpi, index) => (
               <motion.div
                 key={index}
@@ -623,7 +623,7 @@ export default function App() {
                 name: "Starter",
                 description: "Ideal para empresas que quieren comenzar con automatización básica.",
                 features: [
-                  "Chatbot básico con IA",
+                  "Agente de IA básico",
                   "Hasta 1,000 conversaciones/mes",
                   "Integración con sitio web",
                   "Panel de analítica básico",
@@ -632,12 +632,12 @@ export default function App() {
               },
               {
                 name: "Growth",
-                description: "Perfecto para equipos que buscan escalar con chatbots inteligentes y analítica avanzada.",
+                description: "Perfecto para equipos que buscan escalar con agentes de IA inteligentes y analítica avanzada.",
                 features: [
-                  "Chatbot avanzado con IA",
+                  "Agente de IA avanzado",
                   "Conversaciones ilimitadas",
                   "Integración omnicanal",
-                  "Calendly + CRM + APIs",
+                  "Google Calendar + CRM + APIs",
                   "Analítica avanzada",
                   "Soporte prioritario 24/7"
                 ],
@@ -701,11 +701,11 @@ export default function App() {
             {[
               {
                 question: "¿Cuánto tarda la implementación?",
-                answer: "La implementación básica toma entre 1-2 semanas. Incluye configuración inicial, integración con tus sistemas y entrenamiento del chatbot con tu información específica."
+                answer: "La implementación básica toma entre 1-2 semanas. Incluye configuración inicial, integración con tus sistemas y entrenamiento del agente de IA con tu información específica."
               },
               {
                 question: "¿Puedo integrarlo con mis herramientas actuales?",
-                answer: "Sí, Kônsul se integra con las principales plataformas de CRM, WhatsApp Business, Calendly, Google Calendar, y la mayoría de herramientas empresariales mediante APIs."
+                answer: "Sí, Kônsul se integra con las principales plataformas de CRM, WhatsApp Business, Google Calendar, y la mayoría de herramientas empresariales mediante APIs."
               },
               {
                 question: "¿Funciona en varios idiomas?",

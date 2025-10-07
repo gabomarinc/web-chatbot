@@ -16,7 +16,7 @@ export function KonsulLogo({ className = '', size = 'md' }: KonsulLogoProps) {
     <div className={`flex items-center ${sizeClasses[size]} ${className}`}>
       <img 
         src={konsulLogo} 
-        alt="KÔNSUL DIGITAL - Chatbot IA para automatización empresarial" 
+        alt="KÔNSUL DIGITAL - Agentes de IA para automatización empresarial" 
         className="h-full w-auto"
         style={{ imageRendering: 'auto' }}
         loading="eager"

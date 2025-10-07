@@ -46,7 +46,7 @@ export default function App() {
   }, []);
 
   const scrollToDemo = () => {
-    const element = document.querySelector("#solucion");
+    const element = document.querySelector("#demo");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -119,6 +119,75 @@ export default function App() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Demo Chatbot Section */}
+      <section id="demo" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
+              Probá Kônsul en acción
+            </h2>
+            <p className="text-lg text-gray-600">
+              Interactuá con nuestro chatbot inteligente y descubrí cómo puede transformar la atención a tus clientes.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] p-4 flex items-center gap-3">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-white/60"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/60"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/60"></div>
+                </div>
+                <span className="text-white font-semibold text-sm">Chat en vivo con Kônsul</span>
+              </div>
+              <div className="relative w-full" style={{ height: '700px' }}>
+                <iframe 
+                  src="https://app.gptmaker.ai/widget/3E76F75BD0A222B0634A96DA1F24A670/iframe" 
+                  width="100%" 
+                  style={{ height: '100%', minHeight: '700px' }}
+                  allow="microphone;" 
+                  frameBorder="0"
+                  title="Kônsul AI Chatbot Demo"
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <p className="text-gray-600 mb-6">
+              ¿Te gustó la experiencia? Implementá tu propio chatbot personalizado.
+            </p>
+            <Button
+              onClick={openCalendly}
+              size="lg"
+              className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-4"
+            >
+              Quiero mi chatbot
+            </Button>
+          </motion.div>
         </div>
       </section>
 

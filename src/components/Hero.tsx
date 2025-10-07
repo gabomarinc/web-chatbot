@@ -100,8 +100,8 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
 
   return (
     <section className="relative bg-[#0A2540] z-0 overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center min-h-[calc(100vh-10rem)] lg:min-h-[calc(100vh-8rem)]">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 lg:py-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-8 items-center min-h-[calc(100vh-12rem)] lg:min-h-[calc(100vh-10rem)]">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,12 +112,12 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
-            <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-1 sm:mt-2 md:mt-3 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
               Kônsul conversa, agenda y automatiza para que tu negocio funcione incluso cuando vos no estás.
             </p>
 
             {/* Buttons */}
-            <div className="mt-3 sm:mt-4 md:mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start w-full">
+            <div className="mt-2 sm:mt-3 md:mt-4 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start w-full">
               <Button
                 onClick={onCalendlyOpen}
                 size="lg"
@@ -138,7 +138,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             </div>
 
             {/* Tagline */}
-            <p className="mt-3 sm:mt-4 md:mt-6 text-sm sm:text-base text-white/80">
+            <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base text-white/80">
               Chatbots que atienden, aprenden y convierten.
             </p>
           </motion.div>

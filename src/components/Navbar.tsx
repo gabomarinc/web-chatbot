@@ -22,11 +22,27 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    // Cerrar el menú móvil primero
     setIsOpen(false);
+    
+    // Pequeño delay para asegurar que el menú se cierre antes del scroll
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        // Obtener la posición del navbar para ajustar el scroll
+        const navbar = document.querySelector('nav');
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        
+        // Calcular la posición ajustada
+        const elementPosition = (element as HTMLElement).offsetTop - navbarHeight - 20; // 20px de padding extra
+        
+        // Scroll suave
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -87,7 +103,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="block w-full text-left px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-lg transition-all duration-200 touch-manipulation"
                 >
                   {item.label}
                 </button>
@@ -96,8 +112,11 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
               {/* CTA Button */}
               <div className="pt-4 border-t border-white/10">
                 <Button 
-                  onClick={onCalendlyOpen}
-                  className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg py-4"
+                  onClick={() => {
+                    setIsOpen(false);
+                    onCalendlyOpen();
+                  }}
+                  className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 active:opacity-75 text-white text-lg py-4 touch-manipulation transition-all duration-200"
                   aria-label="Agendar una cita de 30 minutos con Kônsul Digital"
                 >
                   Agenda 30 minutos

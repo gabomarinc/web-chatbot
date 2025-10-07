@@ -39,10 +39,23 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showFloatingButton, setShowFloatingButton] = useState(false);
 
+  // Efecto para mostrar/ocultar el botón flotante basado en el scroll
   useEffect(() => {
-    setIsVisible(true);
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        
+        // Mostrar botón solo cuando se haya salido de la sección Hero
+        setShowFloatingButton(scrollPosition > heroBottom);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToDemo = () => {
@@ -846,20 +859,24 @@ export default function App() {
         <Footer />
       </footer>
 
-      {/* Sticky Mobile CTA */}
-      <motion.div
-        initial={{ y: 100 }}
-        animate={{ y: isVisible ? 0 : 100 }}
-        className="fixed bottom-0 left-0 right-0 p-4 bg-[#0A2540] text-white shadow-2xl lg:hidden z-40"
-      >
-        <Button
-          onClick={openCalendly}
-          className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white"
-          size="lg"
+      {/* Sticky Mobile CTA - Solo aparece después del Hero */}
+      {showFloatingButton && (
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed top-0 left-0 right-0 p-4 bg-[#0A2540] text-white shadow-2xl lg:hidden z-40"
         >
-          📅 Agenda 30 minutos con Kônsul
-        </Button>
-      </motion.div>
+          <Button
+            onClick={openCalendly}
+            className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white"
+            size="lg"
+          >
+            📅 Agenda 30 minutos con Kônsul
+          </Button>
+        </motion.div>
+      )}
 
     </div>
   );

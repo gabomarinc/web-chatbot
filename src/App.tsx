@@ -86,7 +86,7 @@ export default function App() {
               {
                 icon: MessageSquare,
                 title: "Automatiza conversaciones reales",
-                description: "Atendé a tus clientes con lenguaje natural y respuestas personalizadas.",
+                description: "Atiende a tus clientes con lenguaje natural y respuestas personalizadas.",
                 gradient: "from-[#00D1C7] to-[#6AE3E1]"
               },
               {
@@ -133,10 +133,10 @@ export default function App() {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
-              Probá Kônsul en acción
+              Prueba Kônsul en acción
             </h2>
             <p className="text-lg text-gray-600">
-              Interactuá con nuestro chatbot inteligente y descubrí cómo puede transformar la atención a tus clientes.
+              Interactúa con nuestro chatbot inteligente y descubre cómo puede transformar la atención a tus clientes.
             </p>
           </motion.div>
 
@@ -178,7 +178,7 @@ export default function App() {
             className="text-center mt-12"
           >
             <p className="text-gray-600 mb-6">
-              ¿Te gustó la experiencia? Implementá tu propio chatbot personalizado.
+              ¿Te gustó la experiencia? Implementa tu propio chatbot personalizado.
             </p>
             <Button
               onClick={openCalendly}
@@ -328,19 +328,19 @@ export default function App() {
               {
                 step: "01",
                 icon: Settings,
-                title: "Conectá tus herramientas.",
+                title: "Conecta tus herramientas.",
                 description: "CRM, WhatsApp, sitio web y formularios."
               },
               {
                 step: "02",
                 icon: Zap,
-                title: "Automatizá flujos.",
+                title: "Automatiza flujos.",
                 description: "Captura leads, responde preguntas, agenda y envía recordatorios."
               },
               {
                 step: "03",
                 icon: BarChart3,
-                title: "Medí y mejorá.",
+                title: "Mide y mejora.",
                 description: "Dashboard con métricas de conversación y rendimiento."
               }
             ].map((step, index) => (
@@ -746,7 +746,7 @@ export default function App() {
               ¿Listo para conocer a tu nuevo asistente inteligente?
             </h2>
             <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-              Agenda una llamada y descubrí cómo Kônsul puede automatizar tus conversaciones y acelerar tus resultados.
+              Agenda una llamada y descubre cómo Kônsul puede automatizar tus conversaciones y acelerar tus resultados.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

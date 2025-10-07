@@ -100,8 +100,8 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
 
   return (
     <section className="relative bg-[#0A2540] z-0 overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3 md:py-4 lg:py-6">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-2 sm:gap-3 lg:gap-6 items-center min-h-[calc(100vh-16rem)] lg:min-h-[calc(100vh-14rem)]">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 lg:py-12">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center min-h-[calc(100vh-12rem)] lg:min-h-[calc(100vh-8rem)]">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,16 +112,16 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
-            <p className="mt-1 sm:mt-1 md:mt-2 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-3 sm:mt-4 md:mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
               Kônsul conversa, agenda y automatiza para que tu negocio funcione incluso cuando vos no estás.
             </p>
 
             {/* Buttons */}
-            <div className="mt-1 sm:mt-2 md:mt-2 flex flex-col sm:flex-row gap-2 justify-center lg:justify-start w-full">
+            <div className="mt-4 sm:mt-5 md:mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start w-full">
               <Button
                 onClick={onCalendlyOpen}
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 aria-label="Agendar una cita de 30 minutos para conocer Kônsul Digital"
               >
                 Agenda 30 minutos
@@ -130,7 +130,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 onClick={onDemoClick}
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4 bg-transparent"
+                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-transparent"
                 aria-label="Probar la demo de Kônsul Digital para ver cómo funciona"
               >
                 Probar Demo
@@ -138,7 +138,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             </div>
 
             {/* Tagline */}
-            <p className="mt-1 sm:mt-1 md:mt-2 text-sm sm:text-base text-white/80">
+            <p className="mt-3 sm:mt-4 md:mt-5 text-sm sm:text-base text-white/80">
               Chatbots que atienden, aprenden y convierten.
             </p>
           </motion.div>

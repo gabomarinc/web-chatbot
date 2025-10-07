@@ -99,9 +99,9 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-[#0A2540] z-0">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0A2540] z-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24 w-full">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,32 +109,32 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
               Tu nuevo asistente inteligente con IA.
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
               Kônsul conversa, agenda y automatiza para que tu negocio funcione incluso cuando vos no estás.
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto">
               <Button
                 onClick={onCalendlyOpen}
                 size="lg"
-                className="bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg px-8 py-6"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 aria-label="Agendar una cita de 30 minutos para conocer Kônsul Digital"
               >
                 Agenda 30 minutos
               </Button>
-                  <Button
-                    onClick={onDemoClick}
-                    size="lg"
-                    variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 bg-transparent"
-                    aria-label="Probar la demo de Kônsul Digital para ver cómo funciona"
-                  >
-                    Probar Demo
-                  </Button>
+              <Button
+                onClick={onDemoClick}
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-transparent"
+                aria-label="Probar la demo de Kônsul Digital para ver cómo funciona"
+              >
+                Probar Demo
+              </Button>
             </div>
 
             {/* Tagline */}
@@ -148,9 +148,9 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative z-0"
+            className="relative z-0 w-full max-w-sm mx-auto lg:max-w-md"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-md mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-full">
               {/* Chat Header */}
               <div className="flex items-center gap-3 pb-4 border-b">
                 <div className="relative">
@@ -248,7 +248,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
               </motion.div>
             </div>
 
-            {/* Floating Elements */}
+            {/* Floating Elements - Hidden on mobile */}
             <motion.div
               animate={{ 
                 y: [0, -10, 0],
@@ -259,7 +259,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-3 hidden md:block z-0"
+              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-3 hidden lg:block z-0"
             >
               <MessageSquare className="text-[#00D1C7]" size={24} />
             </motion.div>
@@ -277,7 +277,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 1
               }}
-              className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden md:block z-0"
+              className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden lg:block z-0"
             >
               <TrendingUp className="text-white" size={20} />
             </motion.div>
@@ -293,7 +293,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 2
               }}
-              className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden lg:block z-0"
+              className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden xl:block z-0"
             >
               <Calendar className="text-white" size={16} />
             </motion.div>

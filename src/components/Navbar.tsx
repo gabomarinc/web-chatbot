@@ -59,18 +59,10 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-4">
-            <Button
-              onClick={onCalendlyOpen}
-              size="sm"
-              className="bg-[#0A2540] hover:bg-[#0A2540]/90 text-white border border-white/20"
-              aria-label="Agendar una cita de 30 minutos"
-            >
-              Agendar
-            </Button>
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white"
+              className="text-white p-2"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -89,7 +81,8 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
             transition={{ duration: 0.2 }}
             className="lg:hidden bg-[#0A2540] border-t border-white/10 overflow-hidden"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-6 space-y-4">
+              {/* Navigation Items */}
               {menuItems.map((item) => (
                 <button
                   key={item.label}
@@ -99,6 +92,17 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
                   {item.label}
                 </button>
               ))}
+              
+              {/* CTA Button */}
+              <div className="pt-4 border-t border-white/10">
+                <Button 
+                  onClick={onCalendlyOpen}
+                  className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-lg py-4"
+                  aria-label="Agendar una cita de 30 minutos con Kônsul Digital"
+                >
+                  Agenda 30 minutos
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

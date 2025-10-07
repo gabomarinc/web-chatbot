@@ -298,15 +298,7 @@ export default function App() {
                   </div>
                   
                   <h3 className="text-lg font-bold mb-3 text-[#0A2540]">{integration.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{integration.description}</p>
-                  
-                  <Button 
-                    onClick={openCalendly}
-                    variant="outline" 
-                    className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-[#00D1C7]"
-                  >
-                    Configurar
-                  </Button>
+                  <p className="text-gray-600 text-sm leading-relaxed">{integration.description}</p>
                 </Card>
               </motion.div>
             ))}

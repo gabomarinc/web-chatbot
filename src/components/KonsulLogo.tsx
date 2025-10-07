@@ -8,8 +8,8 @@ interface KonsulLogoProps {
 export function KonsulLogo({ className = '', size = 'md' }: KonsulLogoProps) {
   const sizeClasses = {
     sm: 'h-8',
-    md: 'h-10 md:h-12',
-    lg: 'h-14 md:h-16'
+    md: 'h-16 md:h-20',
+    lg: 'h-20 md:h-24'
   };
 
   return (

@@ -48,7 +48,7 @@ export function Navbar({ onCalendlyOpen }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-[100] bg-[#0A2540] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
           <div className="flex-shrink-0">
             <KonsulLogo size="md" />

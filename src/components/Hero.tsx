@@ -117,11 +117,11 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
             </p>
 
             {/* Buttons */}
-            <div className="mt-4 sm:mt-6 md:mt-8 flex flex-col gap-3 justify-center lg:justify-start w-full">
+            <div className="mt-4 sm:mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start w-full">
               <Button
                 onClick={onCalendlyOpen}
                 size="lg"
-                className="w-full bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-base px-6 py-4"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#00D1C7] to-[#6AE3E1] hover:opacity-90 text-white text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6"
                 aria-label="Agendar una cita de 30 minutos para conocer Kônsul Digital"
               >
                 Agenda 30 minutos
@@ -130,7 +130,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 onClick={onDemoClick}
                 size="lg"
                 variant="outline"
-                className="w-full border-white/30 text-white hover:bg-white/10 text-base px-6 py-4 bg-transparent"
+                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-transparent"
                 aria-label="Probar la demo de Kônsul Digital para ver cómo funciona"
               >
                 Probar Demo
@@ -248,7 +248,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
               </motion.div>
             </div>
 
-            {/* Floating Elements - Hidden on mobile and contained */}
+            {/* Floating Elements - Hidden on mobile */}
             <motion.div
               animate={{ 
                 y: [0, -10, 0],
@@ -259,7 +259,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute top-4 left-4 bg-white rounded-xl shadow-lg p-3 hidden lg:block z-0"
+              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-3 hidden md:block z-0"
             >
               <MessageSquare className="text-[#00D1C7]" size={24} />
             </motion.div>
@@ -277,7 +277,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 1
               }}
-              className="absolute bottom-4 right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden lg:block z-0"
+              className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#00D1C7] to-[#6AE3E1] rounded-xl shadow-lg p-2 hidden md:block z-0"
             >
               <TrendingUp className="text-white" size={20} />
             </motion.div>
@@ -293,7 +293,7 @@ export function Hero({ onCalendlyOpen, onDemoClick }: HeroProps) {
                 ease: "easeInOut",
                 delay: 2
               }}
-              className="absolute top-1/2 left-4 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden xl:block z-0"
+              className="absolute top-1/2 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-2 hidden lg:block z-0"
             >
               <Calendar className="text-white" size={16} />
             </motion.div>
